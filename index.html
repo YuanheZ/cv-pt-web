@@ -42,11 +42,13 @@
         .dates-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; align-items: center; max-width: 700px; margin: 0 auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .dates-grid div { padding: 0.5rem; }
         .dates-grid .date { font-weight: 700; color: var(--primary-color); font-family: 'Roboto', sans-serif; }
-        
+
         .organizers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
             gap: 2rem;
+            justify-content: center;
+            justify-items: center;
             text-align: center;
         }
         
