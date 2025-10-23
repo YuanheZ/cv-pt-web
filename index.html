@@ -71,6 +71,18 @@
             background: var(--primary-color);
             color: #fff;
         }
+        .ethics-note {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #5c4400;
+        }
+        .ethics-note strong {
+            color: #8a6d00;
+        }
         #submissions .container, #resources .container, #ethics .container { max-width: 860px; }
         footer { background: var(--heading-color); color: #fff; text-align: center; padding: 2rem 0; }
         footer a { color: #a3d0ff; text-decoration: none; }
@@ -110,22 +122,15 @@
     <section id="hero">
         <div class="container">
              <h2>Principles and Scalability</h2>
-             <p>Modern computer vision pipelines depend on powerful pretrained backbones (vision encoders, diffusion models, and vision–language models). The decisive gains for real-world use often come after pretraining—through post-training such as fine-tuning, alignment, test-time adaptation, model editing/unlearning, and reasoning-oriented procedures. This Special Issue invites advances that improve effectiveness, efficiency, and adaptability across recognition and generation tasks.</p>
+             <p>Modern computer vision systems increasingly rely on large pretrained backbones (vision encoders, diffusion models, and vision–language models). The decisive gains for real-world use, however, often come after pretraining—through post-training such as fine-tuning (full or parameter-efficient), instruction/preference alignment, test-time/inference-time adaptation, model editing/unlearning, and reasoning-oriented procedures. This special issue invites innovative research papers that address the challenges of post-training and propose novel techniques that improve effectiveness, efficiency, and adaptability across recognition and generation tasks (e.g., image recognition, image generation, video understanding).</p>
         </div>
     </section>
 
     <main>
-        <section id="about">
-            <div class="container">
-                <h2>About the Special Issue</h2>
-                <p>We invite innovative research on post-training for computer vision systems. Submissions may address full or parameter-efficient fine-tuning, instruction and preference alignment, inference-time adaptation, model editing and unlearning, and techniques that enhance the reliability and scalability of models across diverse tasks (e.g., image classification/generation, video understanding).</p>
-            </div>
-        </section>
-
         <section id="cfp">
             <div class="container">
                 <h2>Aim &amp; Scope</h2>
-                <p>We encourage submissions across visual understanding and generation, including (but not limited to): image classification, object detection, instance/semantic/panoptic segmentation, keypoint/pose estimation, action recognition, visual grounding and VQA, tracking, retrieval, captioning, image/video generation and editing, 3D perception and reconstruction, and embodied/robotic perception.</p>
+                <p>We encourage submissions that cover a broad range of visual understanding and generation tasks, including but not limited to image classification, object detection, instance/semantic/panoptic segmentation, keypoint/pose estimation, action recognition, visual grounding and VQA, tracking, retrieval, captioning, image/video generation and editing, 3D perception and reconstruction, and embodied/robotic perception.</p>
             </div>
         </section>
 
@@ -133,10 +138,10 @@
             <div class="container">
                 <h2>Potential Topics of Interest</h2>
                 <ul>
-                    <li><strong>Parameter-efficient adaptation:</strong> adapters/LoRA, visual prompt tuning, soft/hard prompts, hypernetworks, and rank/structure selection for rapid specialization under tight compute and memory budgets.</li>
-                    <li><strong>Instruction &amp; preference tuning for vision/VLMs:</strong> building and using instruction datasets; pairwise/listwise preference learning (RL-free or RL-based objectives); aligning models to human or task-specific criteria for recognition, localization, captioning, and generation.</li>
-                    <li><strong>Inference-time &amp; test-time adaptation:</strong> on-the-fly strategies such as entropy/objective-driven updates, batch-norm/feature alignment, online/episodic adaptation, retrieval-augmented inference, self-consistency, verifier/rescorer pipelines, and dynamic prompt optimization.</li>
-                    <li><strong>Multi-modality, 3D, and temporal modeling:</strong> post-training across image–text–audio; video and action understanding; point clouds and meshes; 3D reconstruction; and cross-modal grounding.</li>
+                    <li><strong>Parameter-efficient adaptation:</strong> methods for adapters/LoRA, visual prompt tuning, soft/hard prompts, hypernetworks, and rank/structure selection that enable rapid specialization under tight compute and memory budgets.</li>
+                    <li><strong>Instruction &amp; preference tuning for vision/VLMs:</strong> techniques for building and using instruction datasets, pairwise/listwise preference learning (e.g., RL-free or RL-based objectives), and aligning models to human or task-specific criteria for recognition, localization, captioning, and generation.</li>
+                    <li><strong>Inference-time &amp; test-time adaptation:</strong> strategies that adapt on the fly—entropy/objective-driven updates, batch-norm or feature alignment, online/episodic adaptation, retrieval-augmented inference, self-consistency, verifier/rescorer pipelines, and dynamic prompt optimization.</li>
+                    <li><strong>Multi-modality, 3D, and temporal modeling:</strong> post-training across image–text–audio, video and action understanding, point clouds and meshes, 3D reconstruction, and cross-modal grounding.</li>
                 </ul>
             </div>
         </section>
@@ -172,8 +177,9 @@
             <div class="container">
                 <h2>Submission Guidelines</h2>
                 <p>Please submit via IJCV Editorial Manager: <a href="https://www.editorialmanager.com/visi" target="_blank" rel="noopener">www.editorialmanager.com/visi</a>. Choose <em>“S.I. : Fine-Tuning in Modern Machine Learning”</em> from the Article Type dropdown.</p>
-                <p>Submitted papers should present original, unpublished work relevant to the Special Issue topics. All submissions will be evaluated for relevance, significance, technical quality, scholarship, and presentation by at least two independent reviewers. Submissions must not be under review elsewhere during the IJCV review process.</p>
-                <p>Manuscripts must conform to the IJCV author guidelines: <a href="https://link.springer.com/journal/11263/submission-guidelines" target="_blank" rel="noopener">IJCV Submission Guidelines</a>.</p>
+                <p>Submitted papers should present original, unpublished work, relevant to one of the topics of the Special Issue.</p>
+                <p>All submitted papers will be evaluated on the basis of relevance, significance of contribution, technical quality, scholarship, and quality of presentation, by at least two independent reviewers. It is the policy of the journal that no submission, or substantially overlapping submission, be published or be under review at another journal or conference at any time during the review process.</p>
+                <p>Manuscripts must conform to the author guidelines available on the IJCV website at: <a href="https://link.springer.com/journal/11263/submission-guidelines" target="_blank" rel="noopener">IJCV Submission Guidelines</a>.</p>
                 <div class="btn-center">
                     <a class="btn" href="https://www.editorialmanager.com/visi" target="_blank" rel="noopener">Submit Your Paper</a>
                 </div>
@@ -211,17 +217,20 @@
         <section id="ethics">
             <div class="container">
                 <h2>Ethical Responsibilities of Authors</h2>
-                <p>IJCV is committed to upholding the integrity of the scientific record and follows the COPE guidelines on dealing with potential misconduct. Authors should adhere to good scientific practice, including (non-exhaustively):</p>
+                <p>This journal is committed to upholding the integrity of the scientific record. As a member of the <a href="https://publicationethics.org/" target="_blank" rel="noopener">Committee on Publication Ethics (COPE)</a> the journal will follow the COPE guidelines on how to deal with potential acts of misconduct.</p>
+                <p> </p>
+                <p>Authors should refrain from misrepresenting research results which could damage the trust in the journal, the professionalism of scientific authorship, and ultimately the entire scientific endeavour. Maintaining integrity of the research and its presentation is helped by following the rules of good scientific practice, which include:</p>
                 <ul>
-                    <li>Do not submit to more than one journal simultaneously.</li>
-                    <li>Submit original work; clearly disclose any reuse or expansion of prior work to avoid text recycling.</li>
-                    <li>Avoid salami-slicing (fragmenting a single study into multiple submissions).</li>
-                    <li>Concurrent or secondary publication is sometimes justifiable if specific conditions are met (e.g., translations with clarity on audience).</li>
-                    <li>Present results clearly and honestly without fabrication, falsification, or inappropriate manipulation (including image-based manipulation).</li>
-                    <li>Follow discipline-specific rules for data acquisition, selection, and processing.</li>
-                    <li>Acknowledge others’ work properly; use quotation marks for verbatim text and secure permissions for copyrighted material.</li>
+                    <li>The manuscript should not be submitted to more than one journal for simultaneous consideration.</li>
+                    <li>The submitted work should be original and should not have been published elsewhere in any form or language (partially or in full), unless the new work concerns an expansion of previous work. (Please provide transparency on the re-use of material to avoid the concerns about text-recycling (‘self-plagiarism’).</li>
+                    <li>A single study should not be split up into several parts to increase the quantity of submissions and submitted to various journals or to one journal over time (i.e. ‘salami-slicing/publishing’).</li>
+                    <li>Concurrent or secondary publication is sometimes justifiable, provided certain conditions are met. Examples include: translations or a manuscript that is intended for a different group of readers.</li>
+                    <li>Results should be presented clearly, honestly, and without fabrication, falsification or inappropriate data manipulation (including image based manipulation). Authors should adhere to discipline-specific rules for acquiring, selecting and processing data.</li>
+                    <li>No data, text, or theories by others are presented as if they were the author’s own (‘plagiarism’). Proper acknowledgements to other works must be given (this includes material that is closely copied (near verbatim), summarized and/or paraphrased), quotation marks (to indicate words taken from another source) are used for verbatim copying of material, and permissions secured for material that is copyrighted.</li>
                 </ul>
-                <p>IJCV may screen submissions for plagiarism. For details, see the <a href="https://link.springer.com/journal/11263/submission-guidelines" target="_blank" rel="noopener">IJCV Submission Guidelines</a>.</p>
+                <div class="ethics-note">
+                    <strong>Important Note:</strong> the journal may use software to screen for plagiarism.For more information on the Ethical Responsibilities of authors, please visit <a href="https://link.springer.com/journal/11263/submission-guidelines" target="_blank" rel="noopener">the IJCV Submission guidelines</a>.
+                </div>
             </div>
         </section>
     </main>
