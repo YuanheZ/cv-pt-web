@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        This page follows the visual language of the provided IJCV template. It
+        retains the same clean typography and blue‑accented colour palette while
+        bringing across all of the information contained in the uploaded
+        “Call for Papers_IJCV_SI.docx”.  The structure has been organised into
+        logical sections that mirror the document: an introduction and scope,
+        a list of topics, important dates, guest editors, submission
+        guidelines, author resources and ethical responsibilities.  A large
+        abstract illustration sourced from Wikimedia Commons has been added to
+        the hero panel to provide visual interest and reinforce the machine
+        learning theme of the call for papers.
+    -->
+    <title>IJCV Special Issue | Post‑Training for Vision Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007BFF;
+            --primary-color-hover: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #343a40;
+            --heading-color: #212529;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: #fff;
+            color: var(--heading-color);
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Navigation bar */
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        nav.scrolled {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease-in-out;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+        section:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+        section h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--heading-color);
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* Hero section styles */
+        #hero {
+            background: var(--secondary-color);
+        }
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 50%;
+        }
+        .hero-text h2 {
+            font-size: 2.1rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            max-width: 600px;
+        }
+        .hero-img {
+            flex: 1 1 45%;
+            text-align: center;
+        }
+        .hero-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* List styling */
+        #topics ul {
+            list-style: disc;
+            margin-left: 2rem;
+        }
+        #topics li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dates grid */
+        .dates-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .dates-grid .date {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Roboto', sans-serif;
+        }
+        .dates-grid .event {
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        /* Guest editors */
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .organizer-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .organizer-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary-color);
+        }
+        .organizer-card h3 {
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 0.25rem;
+            color: var(--heading-color);
+        }
+        .organizer-card p {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--primary-color-hover);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--heading-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .hero-flex {
+                flex-direction: column;
+            }
+            .hero-text,
+            .hero-img {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .dates-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Post‑Training for Vision Models</h1>
+            <p>A Special Issue of the International Journal of Computer Vision (IJCV)</p>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="active">Overview</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#dates">Dates</a></li>
+                <li><a href="#editors">Guest Editors</a></li>
+                <li><a href="#guidelines">Guidelines</a></li>
+                <li><a href="#ethics">Ethics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero panel with abstract illustration and concise subtitle -->
+    <section id="hero">
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <h2>Principles and Scalability of Post‑Training</h2>
+                <p>Modern vision systems depend on enormous pre‑trained backbones, but true
+                    performance gains come after pre‑training through careful
+                    post‑training. This special issue explores innovative methods to
+                    adapt vision and vision–language models at scale, spanning
+                    fine‑tuning, instruction alignment, inference‑time adaptation and more.</p>
+            </div>
+            <div class="hero-img">
+                <img src="hero_image.png" alt="Abstract AI generated artwork">
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Introduction and scope -->
+        <section id="about">
+            <div class="container">
+                <h2>Introduction &amp; Scope</h2>
+                <p>Modern computer vision systems increasingly rely on large
+                    pretrained backbones such as vision encoders, diffusion models and
+                    vision–language models. The decisive gains for real‑world use,
+                    however, often arise <em>after</em> pre‑training — through
+                    post‑training procedures like fine‑tuning (full or parameter‑efficient),
+                    instruction/preference alignment, test‑time adaptation, model
+                    editing/unlearning and reasoning‑oriented procedures.  The aim of this
+                    special issue is to invite innovative research papers that address
+                    the challenges of post‑training and propose novel techniques that
+                    improve effectiveness, efficiency and adaptability across
+                    recognition and generation tasks.</p>
+                <p>We encourage submissions that cover a broad range of visual
+                    understanding and generation tasks, including but not limited to image
+                    classification, object detection, instance/semantic/panoptic
+                    segmentation, keypoint/pose estimation, action recognition, visual
+                    grounding and visual question answering (VQA), tracking,
+                    retrieval, captioning, image/video generation and editing, 3D
+                    perception and reconstruction, and embodied or robotic perception.</p>
+            </div>
+        </section>
+
+        <!-- Topics of interest -->
+        <section id="topics">
+            <div class="container">
+                <h2>Topics of Interest</h2>
+                <p>Potential topics of interest include, but are not limited to:</p>
+                <ul>
+                    <li><strong>Parameter‑efficient adaptation</strong>, such as methods for adapters/LoRA,
+                        visual prompt tuning, soft/hard prompts, hypernetworks and
+                        rank/structure selection that enable rapid specialisation under
+                        tight compute and memory budgets.</li>
+                    <li><strong>Instruction and preference tuning</strong> for vision and vision–language
+                        models, including techniques for building and using instruction
+                        datasets, pairwise or listwise preference learning (e.g.,
+                        RL‑free or RL‑based objectives), and aligning models to human
+                        or task‑specific criteria for recognition, localisation,
+                        captioning and generation.</li>
+                    <li><strong>Inference‑time and test‑time adaptation</strong>, covering strategies that adapt
+                        on the fly — entropy or objective‑driven updates, batch‑norm or
+                        feature alignment, online/episodic adaptation,
+                        retrieval‑augmented inference, self‑consistency,
+                        verifier/rescorer pipelines and dynamic prompt optimisation.</li>
+                    <li><strong>Multi‑modality, 3D and temporal modelling</strong>, encompassing
+                        post‑training across image–text–audio modalities, video and action
+                        understanding, point clouds and meshes, 3D reconstruction and
+                        cross‑modal grounding.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Important dates -->
+        <section id="dates">
+            <div class="container">
+                <h2>Important Dates</h2>
+                <div class="dates-grid">
+                    <div class="date">July&nbsp;15,&nbsp;2026</div>
+                    <div class="event">Submission deadline</div>
+                    <div class="date">November&nbsp;15,&nbsp;2026</div>
+                    <div class="event">First review notification</div>
+                    <div class="date">February&nbsp;15,&nbsp;2027</div>
+                    <div class="event">Revised submission deadline</div>
+                    <div class="date">May&nbsp;15,&nbsp;2027</div>
+                    <div class="event">Final review notification</div>
+                    <div class="date">June&nbsp;15,&nbsp;2027</div>
+                    <div class="event">Final manuscript due</div>
+                    <div class="date">Summer&nbsp;2027</div>
+                    <div class="event">Publication date</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guest editors -->
+        <section id="editors">
+            <div class="container">
+                <h2>Guest Editors</h2>
+                <div class="organizers-grid">
+                    <div class="organizer-card">
+                        <img src="https://via.placeholder.com/150" alt="Guest Editor photo">
+                        <h3>Fanghui&nbsp;Liu</h3>
+                        <p>University of Warwick, UK</p>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="https://via.placeholder.com/150" alt="Guest Editor photo">
+                        <h3>Grigorios&nbsp;Chrysos</h3>
+                        <p>University of Wisconsin–Madison, USA</p>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="https://via.placeholder.com/150" alt="Guest Editor photo">
+                        <h3>René&nbsp;Vidal</h3>
+                        <p>University of Pennsylvania, USA</p>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="https://via.placeholder.com/150" alt="Guest Editor photo">
+                        <h3>Dacheng&nbsp;Tao</h3>
+                        <p>Nanyang Technological University, Singapore</p>
+                    </div>
+                    <div class="organizer-card">
+                        <img src="https://via.placeholder.com/150" alt="Guest Editor photo">
+                        <h3>Philip&nbsp;Torr</h3>
+                        <p>University of Oxford, UK</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submission guidelines and author resources -->
+        <section id="guidelines">
+            <div class="container">
+                <h2>Submission&nbsp;Guidelines &amp; Resources</h2>
+                <p>Manuscripts should present original, unpublished work relevant to
+                    one of the topics of this special issue.  Submissions must be
+                    prepared according to the IJCV author guidelines and should not
+                    be under review at another journal or conference during the
+                    evaluation process.</p>
+                <p>Please submit via the IJCV Editorial Manager and choose
+                    <em>“SI: Fine‑Tuning in Modern Machine Learning”</em> from the
+                    article type dropdown.  Each submission will be reviewed by at
+                    least two independent reviewers and evaluated for relevance,
+                    significance, technical quality and clarity of presentation.</p>
+                <p>Useful links for authors:</p>
+                <ul>
+                    <li><a href="https://www.editorialmanager.com/visi" target="_blank">IJCV Editorial Manager</a></li>
+                    <li><a href="https://link.springer.com/journal/11263/submission-guidelines" target="_blank">IJCV Author Guidelines</a></li>
+                    <li><a href="https://www.springer.com/gp/authors-editors/journal-author" target="_blank">Springer Journal Author Resources</a></li>
+                    <li><a href="https://www.springer.com/gp/open-access/publication-policies" target="_blank">Publication Policies</a></li>
+                    <li><a href="https://www.springer.com/gp/open-access/publication-policies/self-archiving-policy" target="_blank">Self‑Archiving Policy</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Ethical responsibilities -->
+        <section id="ethics">
+            <div class="container">
+                <h2>Ethical&nbsp;Responsibilities</h2>
+                <p>This journal is committed to upholding the integrity of the
+                    scientific record.  Authors should follow good scientific
+                    practices to ensure trust in the publication process and the
+                    professionalism of scientific authorship.  Key points include:</p>
+                <ul>
+                    <li>The manuscript should not be submitted to more than one
+                        journal for simultaneous consideration.</li>
+                    <li>The submitted work should be original and should not have
+                        been published elsewhere in any form or language, unless
+                        the new work is an expansion of previous work; authors
+                        should provide transparency on reuse of material to
+                        avoid concerns about self‑plagiarism.</li>
+                    <li>A single study should not be split up into several parts to
+                        increase the quantity of submissions (“salami
+                        publishing”).</li>
+                    <li>Results should be presented clearly, honestly and without
+                        fabrication, falsification or inappropriate data
+                        manipulation (including image manipulation).  Discipline‑specific
+                        rules for acquiring, selecting and processing data should
+                        be followed.</li>
+                    <li>Authors must acknowledge the work of others appropriately
+                        and avoid presenting others’ data, text or theories as
+                        their own.  Proper citations and permissions for
+                        copyrighted material are required.</li>
+                </ul>
+                <p>For full details see the IJCV ethical guidelines:</p>
+                <p><a href="https://link.springer.com/journal/11263/submission-guidelines" target="_blank">IJCV Submission Guidelines</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 International Journal of Computer Vision &nbsp;|&nbsp; Visit the <a href="https://www.springer.com/journal/11263" target="_blank">official IJCV website</a> for more information.</p>
+        </div>
+    </footer>
+
+    <!-- Simple script to handle sticky nav shadow and active link state -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('#navbar ul li a');
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if(pageYOffset >= sectionTop - navbar.offsetHeight - 10) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
