@@ -48,6 +48,29 @@
         .organizer-card p { font-size: 0.95rem; color: #6c757d; }
         .btn { display: inline-block; background: var(--primary-color); color: #fff; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; font-weight: 700; transition: background-color 0.3s ease; font-family: 'Roboto', sans-serif; border: none; cursor: pointer; }
         .btn:hover { background: var(--primary-color-hover); }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem 1.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .links-grid a {
+            display: block;
+            background: #fff;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .links-grid a:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
         #submissions .container, #resources .container, #ethics .container { max-width: 860px; }
         footer { background: var(--heading-color); color: #fff; text-align: center; padding: 2rem 0; }
         footer a { color: #a3d0ff; text-decoration: none; }
