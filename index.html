@@ -82,6 +82,19 @@
             font-size: 0.9rem;
             color: #6c757d;
         }
+
+        .organizer-link {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* makes the link cover the whole card */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .organizer-link:hover .organizer-card {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
         
         .btn {
             display: inline-block;
@@ -233,11 +246,13 @@
             <div class="container">
                 <h2>Guest Editors</h2>
                 <div class="organizers-grid">
+                  <a href="https://fanghui.org/" target="_blank" rel="noopener" class="organizer-link">
                     <div class="organizer-card">
                         <img src="fanghui.png" alt="Editor 1 Photo">
                         <h3>Fanghui Liu</h3>
                         <p>University of Warwick, UK</p>
                     </div>
+                  </a>
                     <div class="organizer-card">
                         <img src="chry.jpeg" alt="Editor 2 Photo">
                         <h3>Grigorios Chrysos</h3>
